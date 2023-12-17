@@ -1,0 +1,12 @@
+{
+  "name": "accounting_document",
+  "version": "1.0.0",
+  "description": "会計班引継ぎ資料",
+  "main": "index.js",
+  "scripts": {
+    "build": "vivliostyle build",
+    "preview": "vivliostyle preview"
+  },
+  "keywords": [],
+  "author": ""
+}
