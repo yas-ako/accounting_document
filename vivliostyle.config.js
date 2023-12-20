@@ -3,7 +3,13 @@ module.exports = {
   theme: "css/style.css",
   language: "ja",
   author: "第75期記念祭幹部",
-  entry: ["0_frontmatter.md"],
+  entryContext: "./manuscripts",
+  entry: [
+    {
+      path: "0_frontmatter.md",
+      rel: "contents",
+    },
+  ],
   output: ".vivliostyle/output.pdf",
   workspaceDir: ".vivliostyle",
 };
