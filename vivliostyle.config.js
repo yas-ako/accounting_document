@@ -1,4 +1,5 @@
 module.exports = {
+  size: "a5",
   title: "会計班引継ぎ資料",
   theme: "css/style.css",
   language: "ja",
