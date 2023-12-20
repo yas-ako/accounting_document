@@ -7,6 +7,9 @@
     "build": "vivliostyle build",
     "preview": "vivliostyle preview"
   },
+  "devDependencies": {
+    "@vivliostyle/cli": "^8.6.0"
+  },
   "keywords": [],
   "author": ""
 }
