@@ -26,6 +26,27 @@ html {
 }
 
 //////////////////////////
+/// 背景の画像
+//////////////////////////
+
+/// 1枚目 青いやつ
+@page: nth(1) {
+  background-image: url("./img/chapter_page.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: #fff;
+
+  // ページ番号なし
+  @top-left-corner {
+    content: none;
+  }
+  @top-left {
+    content: none;
+  }
+}
+
+//////////////////////////
 // 各見出しのスタイル
 //////////////////////////
 
@@ -35,28 +56,24 @@ h1 {
   font-weight: 600;
 
   counter-increment: chapter;
-  font-size: 8mm;
+  font-size: 8.2mm;
   padding-left: 21mm;
+  margin-top: -1mm;
 
   color: white;
   &::before {
+    font-size: 7.3mm;
     position: absolute;
     left: -6mm;
+    top: 0.25mm;
     content: "第" counter(chapter) "章";
   }
 }
 
-@page: nth(1) {
-  background-image: url("./img/chapter_page.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right;
-  background-color: #fff;
-  @top-left-corner {
-    content: none;
-  }
-
-  @top-left {
-    content: none;
-  }
+//////////////////////////
+/// その他スタイル
+//////////////////////////
+hr {
+  visibility: hidden;
+  break-after: page;
 }

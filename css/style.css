@@ -24,20 +24,6 @@ html {
   size: 148mm 210mm; /* A5サイズ */
   margin: 18mm 16mm 16mm 16mm;
 }
-h1 {
-  font-family: var(--main-font-family);
-  font-weight: 600;
-  counter-increment: chapter;
-  font-size: 8mm;
-  padding-left: 21mm;
-  color: white;
-}
-h1::before {
-  position: absolute;
-  left: -6mm;
-  content: "第" counter(chapter) "章";
-}
-
 @page : nth(1) {
   background-image: url("./img/chapter_page.png");
   background-size: contain;
@@ -50,6 +36,27 @@ h1::before {
   @top-left {
     content: none;
   }
+}
+h1 {
+  font-family: var(--main-font-family);
+  font-weight: 600;
+  counter-increment: chapter;
+  font-size: 8.2mm;
+  padding-left: 21mm;
+  margin-top: -1mm;
+  color: white;
+}
+h1::before {
+  font-size: 7.3mm;
+  position: absolute;
+  left: -6mm;
+  top: 0.25mm;
+  content: "第" counter(chapter) "章";
+}
+
+hr {
+  visibility: hidden;
+  break-after: page;
 }
 
 /*# sourceMappingURL=style.css.map */
