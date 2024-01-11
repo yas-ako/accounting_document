@@ -2,5 +2,10 @@ node_modules
 *.html
 publication.json
 *.pdf
-.vivliostyle
-!.vivliostyle/css/img/
+
+# 勝手に生成されるファイルは追跡しない．
+# 画像ファイルのみ追跡する
+/.vivliostyle/*
+!/.vivliostyle/css/
+/.vivliostyle/css/*
+!/.vivliostyle/css/img/
