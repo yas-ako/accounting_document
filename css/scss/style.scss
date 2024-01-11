@@ -1,6 +1,62 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-font-family: "Noto Serif JP", serif;
+  --heading-gothic-font-family: "Noto Sans JP", sans-serif;
+}
+
 html {
-  font-family: "Noto Sans JP", serif;
-  font-weight: 300;
+  font-family: var(--main-font-family);
+  font-size: 3.7mm;
+  text-align: justify;
+  widows: 1;
+  orphans: 1;
+  text-spacing: auto;
+}
+
+@page {
+  size: 148mm 210mm; /* A5サイズ */
+  margin: 18mm 16mm 16mm 16mm;
+}
+
+//////////////////////////
+// 各見出しのスタイル
+//////////////////////////
+
+// 章(chapter)
+h1 {
+  font-family: var(--main-font-family);
+  font-weight: 600;
+
+  counter-increment: chapter;
+  font-size: 8mm;
+  padding-left: 21mm;
+
+  color: white;
+  &::before {
+    position: absolute;
+    left: -6mm;
+    content: "第" counter(chapter) "章";
+  }
+}
+
+@page: nth(1) {
+  background-image: url("./img/chapter_page.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: #fff;
+  @top-left-corner {
+    content: none;
+  }
+
+  @top-left {
+    content: none;
+  }
 }

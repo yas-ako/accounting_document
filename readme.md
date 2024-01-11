@@ -3,4 +3,6 @@
 ## 使用しているもの
 
 * Vivliostyle
+* ress
+* npm-run-all
 

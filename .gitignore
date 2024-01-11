@@ -3,3 +3,4 @@ node_modules
 publication.json
 *.pdf
 .vivliostyle
+!.vivliostyle/css/img/
