@@ -143,6 +143,10 @@ hr {
   break-after: page;
 }
 
+p {
+  text-indent: 1rem;
+}
+
 .intro {
   font-size: 3.5mm;
   font-family: "Noto Sans JP", sans-serif;
