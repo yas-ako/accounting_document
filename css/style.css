@@ -25,11 +25,25 @@ html {
   margin: 18mm 16mm 16mm 16mm;
 }
 @page : nth(1) {
-  background-image: url("./img/chapter_page.png");
+  background-image: url("./img/chapter_page_left.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
   background-color: #fff;
+  @top-left-corner {
+    content: none;
+  }
+  @top-left {
+    content: none;
+  }
+}
+@page : nth(2) {
+  background-image: url("./img/chapter_page_right.png");
+  background-size: contain;
+  background-repeat: repeat-x;
+  background-position: right;
+  background-color: #fff;
+  margin-top: 40mm;
   @top-left-corner {
     content: none;
   }
