@@ -92,6 +92,33 @@ h2::after {
   background-color: #000;
 }
 
+h3 {
+  counter-increment: subheading;
+  counter-reset: heading;
+  background-color: #e0eaf6;
+  background: linear-gradient(to right, #fff 5%, #e0eaf6 5%);
+  margin-bottom: 2mm;
+  padding: 0 0mm 0 12mm;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 600;
+  height: 7mm;
+  line-height: 7mm;
+  font-size: 4mm;
+}
+h3::before {
+  content: counter(subheading);
+  text-align: center;
+  width: 10mm;
+  position: absolute;
+  left: 0;
+  background-color: #017dc5;
+  box-shadow: 0px -10px 9px -4px #00abdd inset;
+  height: 7mm;
+  color: #fff;
+  font-weight: 500;
+  clip-path: polygon(0mm 0px, 100% 0px, 100% 1mm, 100% 100%, 100% 100%, 1mm 100%, 0px calc(102% - 1mm), 0px 1mm);
+}
+
 hr {
   visibility: hidden;
   break-after: page;
