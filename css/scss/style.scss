@@ -156,6 +156,27 @@ h3 {
   }
 }
 
+//段落 (paragraph)
+h4 {
+  counter-increment: paragraph;
+  font-family: Noto Sans JP;
+  font-weight: 600;
+  font-size: 3.4mm;
+  padding-left: 6mm;
+  // margin-top: 6mm;
+  margin-bottom: 2mm;
+  border-bottom: 0.2mm #d55564 solid;
+  &::before {
+    color: #fff;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    width: 5mm;
+    background-color: #d55564;
+    content: counter(paragraph, upper-alpha);
+  }
+}
+
 //////////////////////////
 /// その他スタイル
 //////////////////////////

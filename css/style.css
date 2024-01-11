@@ -119,6 +119,25 @@ h3::before {
   clip-path: polygon(0mm 0px, 100% 0px, 100% 1mm, 100% 100%, 100% 100%, 1mm 100%, 0px calc(102% - 1mm), 0px 1mm);
 }
 
+h4 {
+  counter-increment: paragraph;
+  font-family: Noto Sans JP;
+  font-weight: 600;
+  font-size: 3.4mm;
+  padding-left: 6mm;
+  margin-bottom: 2mm;
+  border-bottom: 0.2mm #d55564 solid;
+}
+h4::before {
+  color: #fff;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  width: 5mm;
+  background-color: #d55564;
+  content: counter(paragraph, upper-alpha);
+}
+
 hr {
   visibility: hidden;
   break-after: page;
