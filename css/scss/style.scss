@@ -87,6 +87,33 @@ h1 {
   }
 }
 
+// 節(section)
+h2 {
+  color: #017dc5;
+  counter-increment: section;
+  font-size: 6.3mm;
+  // letter-spacing: 1.4mm;
+  padding-left: 24mm;
+  margin-bottom: 1.3mm;
+  position: relative;
+  &::before {
+    content: "第" counter(section) "節 ";
+    position: absolute;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 21mm;
+    width: 0.15mm;
+    height: 6.3mm;
+    top: 50%;
+    margin-top: -2.8mm;
+    background-color: #000;
+  }
+}
+
 //////////////////////////
 /// その他スタイル
 //////////////////////////
