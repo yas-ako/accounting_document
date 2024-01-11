@@ -124,4 +124,12 @@ hr {
   break-after: page;
 }
 
+.intro {
+  font-size: 3.5mm;
+  font-family: "Noto Sans JP", sans-serif;
+  margin-bottom: 6mm;
+  font-weight: 500;
+  letter-spacing: -0.2mm;
+}
+
 /*# sourceMappingURL=style.css.map */
