@@ -23,7 +23,7 @@ jobs:
       run: npm run build
 
     - name: Upload PDF as artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: pdf-artifact
         path: .vivliostyle/output.pdf
