@@ -145,6 +145,7 @@ hr {
 
 p {
   text-indent: 1rem;
+  margin-bottom: 3mm;
 }
 
 .intro {
@@ -153,6 +154,24 @@ p {
   margin-bottom: 6mm;
   font-weight: 500;
   letter-spacing: -0.2mm;
+}
+
+.info {
+  background-color: #e8f1f8;
+  margin-bottom: 3mm;
+  padding: 3mm 5mm;
+}
+.info > p {
+  text-indent: 0;
+  padding: 0;
+  margin: 0;
+}
+.info > p > strong {
+  display: block;
+  font-family: var(--heading-gothic-font-family);
+}
+.info > p > strong::before {
+  content: leader("…");
 }
 
 /*# sourceMappingURL=style.css.map */
