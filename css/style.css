@@ -38,7 +38,7 @@ html {
   }
 }
 @page : nth(2) {
-  background-image: url("/img/chapter_page_right.png");
+  background-image: url("./img/chapter_page_right.png");
   background-size: contain;
   background-repeat: repeat-x;
   background-position: right;
@@ -169,9 +169,6 @@ p {
 .info > p > strong {
   display: block;
   font-family: var(--heading-gothic-font-family);
-}
-.info > p > strong::before {
-  content: leader("…");
 }
 
 /*# sourceMappingURL=style.css.map */
