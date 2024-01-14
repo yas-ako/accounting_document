@@ -9,6 +9,7 @@
 :root {
   --main-font-family: "Noto Serif JP", serif;
   --heading-gothic-font-family: "Noto Sans JP", sans-serif;
+  counter-reset: chapter;
 }
 
 html {
@@ -26,10 +27,57 @@ html {
 }
 
 //////////////////////////
-/// 背景の画像
+/// 背景の画像，ページ番号
 //////////////////////////
 
-/// 1枚目 青いやつ
+// 章番号セット
+@page :first {
+  /* 全原稿ファイルの中で1枚目のページ */
+  // counter-reset: chapter;
+}
+
+@page :nth(2) {
+  /* 各原稿ファイルの中で2枚目のページ */
+  counter-increment: chapter;
+}
+
+@page :left {
+  margin-right: 20mm;
+  @top-left-corner {
+    content: counter(page);
+    text-align: center;
+    font-family: "Noto Sans JP";
+    font-weight: 500;
+    font-size: 3.4mm;
+  }
+  @top-left {
+    content: "第" counter(chapter) "章 │ " env(doc-title);
+    font-family: "Noto Serif JP";
+    font-weight: 500;
+    font-size: 3mm;
+  }
+}
+
+// 右ページ 右上に表示
+@page :right {
+  margin-right: 20mm;
+  @top-right-corner {
+    content: counter(page);
+    text-align: center;
+    font-family: "Noto Sans JP";
+    font-weight: 500;
+    font-size: 3.4mm;
+  }
+
+  @top-right {
+    content: string(seciton-number, first) "│ " string(section, first);
+    font-family: "Noto Serif JP";
+    font-weight: 500;
+    font-size: 3mm;
+  }
+}
+
+// 青い背景 一枚目
 @page: nth(1) {
   background-image: url("../img/chapter_page_left.png");
   background-size: contain;
@@ -46,6 +94,7 @@ html {
   }
 }
 
+// 青い背景 二枚目
 @page: nth(2) {
   background-image: url("../img/chapter_page_right.png");
   background-size: contain;
@@ -58,7 +107,36 @@ html {
   @top-left-corner {
     content: none;
   }
+
   @top-left {
+    content: none;
+  }
+
+  @top-right-corner {
+    content: none;
+  }
+
+  @top-right {
+    content: none;
+  }
+}
+
+// 表紙
+@page: first {
+  background-image: none;
+  @top-left-corner {
+    content: none;
+  }
+
+  @top-left {
+    content: none;
+  }
+
+  @top-right-corner {
+    content: none;
+  }
+
+  @top-right {
     content: none;
   }
 }
@@ -72,7 +150,7 @@ h1 {
   font-family: var(--main-font-family);
   font-weight: 600;
 
-  counter-increment: chapter;
+  counter-reset: section;
   font-size: 8.2mm;
   padding-left: 21mm;
   margin-top: -1mm;
@@ -84,18 +162,23 @@ h1 {
     left: -6mm;
     top: 0.25mm;
     content: "第" counter(chapter) "章";
+    counter-increment: chapter;
   }
 }
 
 // 節(section)
 h2 {
+  break-before: verso;
   color: #017dc5;
   counter-increment: section;
+  counter-reset: item;
   font-size: 6.3mm;
   // letter-spacing: 1.4mm;
   padding-left: 24mm;
   margin-bottom: 1.3mm;
   position: relative;
+  string-set: section content(), seciton-number content(before);
+
   &::before {
     content: "第" counter(section) "節 ";
     position: absolute;
@@ -116,8 +199,8 @@ h2 {
 
 // 項(item)
 h3 {
-  counter-increment: subheading;
-  counter-reset: heading;
+  counter-increment: item;
+  counter-reset: paragraph;
   background-color: #e0eaf6;
   background: linear-gradient(to right, #fff 5%, #e0eaf6 5%);
   // margin: 1.3mm 0 0 0;
@@ -131,7 +214,7 @@ h3 {
 
   // 数字の書かれている，青い枠
   &::before {
-    content: counter(subheading);
+    content: counter(item);
     text-align: center;
     width: 10mm;
     position: absolute;
