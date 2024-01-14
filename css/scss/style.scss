@@ -155,6 +155,8 @@ h1 {
   padding-left: 21mm;
   margin-top: -1mm;
 
+  counter-increment: chapter;
+  string-set: chapter content(), chapter-number countent(before);
   color: white;
   &::before {
     font-size: 7.3mm;
@@ -162,7 +164,6 @@ h1 {
     left: -6mm;
     top: 0.25mm;
     content: "第" counter(chapter) "章";
-    counter-increment: chapter;
   }
 }
 
