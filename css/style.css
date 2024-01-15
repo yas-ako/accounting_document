@@ -9,7 +9,6 @@
 :root {
   --main-font-family: "Noto Serif JP", serif;
   --heading-gothic-font-family: "Noto Sans JP", sans-serif;
-  counter-reset: chapter;
 }
 
 html {
@@ -27,8 +26,9 @@ html {
 }
 @page :first {
   /* 全原稿ファイルの中で1枚目のページ */
+  counter-reset: chapter -1;
 }
-@page :nth(2) {
+@page :nth(1) {
   /* 各原稿ファイルの中で2枚目のページ */
   counter-increment: chapter;
 }
@@ -113,14 +113,13 @@ html {
   }
 }
 h1 {
+  break-before: verso;
   font-family: var(--main-font-family);
   font-weight: 600;
   counter-reset: section;
   font-size: 8.2mm;
   padding-left: 21mm;
   margin-top: -1mm;
-  counter-increment: chapter;
-  string-set: chapter content(), chapter-number countent(before);
   color: white;
 }
 h1::before {

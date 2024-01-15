@@ -6,7 +6,7 @@ module.exports = {
   language: "ja",
   author: "第75期記念祭幹部",
   entryContext: "./manuscripts",
-  entry: ["0_cover.md", "1_first.md", "2_second.md"],
+  entry: ["0_cover.md", "1_first.md", "2_second.md", "3_third.md"],
   output: ".vivliostyle/output.pdf",
   workspaceDir: ".vivliostyle/",
 };
